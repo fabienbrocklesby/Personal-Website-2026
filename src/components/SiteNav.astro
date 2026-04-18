@@ -1,0 +1,28 @@
+---
+// SiteNav.astro - Tab-style navigation linking /about and /links
+
+interface Props {
+	activePage: 'about' | 'links'
+}
+
+const { activePage } = Astro.props
+---
+
+<nav class="site-nav" aria-label="Site navigation">
+	<div class="tabs-list">
+		<a
+			href="/about"
+			class="tab-link"
+			aria-current={activePage === 'about' ? 'page' : undefined}
+		>
+			About
+		</a>
+		<a
+			href="/links"
+			class="tab-link"
+			aria-current={activePage === 'links' ? 'page' : undefined}
+		>
+			Links
+		</a>
+	</div>
+</nav>

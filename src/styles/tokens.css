@@ -1,0 +1,100 @@
+/* =============================================================
+   Design Tokens
+   fabienbrocklesby.com
+   ============================================================= */
+
+:root {
+  /* --- Color: Base --- */
+  --color-bg:              #F8F8F5;
+  --color-surface:         #FFFFFF;
+  --color-surface-raised:  rgba(255, 255, 255, 0.85);
+
+  /* --- Color: Text --- */
+  --color-text:            #111110;
+  --color-text-secondary:  #6E6E68;
+  --color-text-tertiary:   #AEAEA8;
+
+  /* --- Color: Border --- */
+  --color-border:          #E4E4DF;
+  --color-border-subtle:   #EFEFEA;
+
+  /* --- Color: Interactive --- */
+  --color-tab-bg:          rgba(0, 0, 0, 0.06);
+  --color-tab-active:      #FFFFFF;
+  --color-link-hover:      rgba(17, 17, 16, 0.55);
+
+  /* --- Color: Accent --- */
+  --color-accent:          #111110;
+
+  /* --- Typography --- */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+               "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", monospace;
+
+  /* --- Type Scale --- */
+  --text-xs:    0.75rem;    /* 12px */
+  --text-sm:    0.875rem;   /* 14px */
+  --text-base:  1rem;       /* 16px */
+  --text-lg:    1.0625rem;  /* 17px */
+  --text-xl:    1.25rem;    /* 20px */
+  --text-2xl:   1.5rem;     /* 24px */
+  --text-3xl:   2rem;       /* 32px */
+  --text-4xl:   clamp(2.25rem, 4.5vw, 3rem);
+
+  /* --- Font Weights --- */
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+
+  /* --- Letter Spacing --- */
+  --tracking-tight:   -0.03em;
+  --tracking-normal:  -0.01em;
+  --tracking-wide:    0.04em;
+
+  /* --- Line Height --- */
+  --leading-tight:    1.15;
+  --leading-snug:     1.35;
+  --leading-normal:   1.6;
+  --leading-relaxed:  1.75;
+
+  /* --- Spacing --- */
+  --space-1:   0.25rem;   /* 4px  */
+  --space-2:   0.5rem;    /* 8px  */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+
+  /* --- Border Radius --- */
+  --radius-sm:    4px;
+  --radius:       8px;
+  --radius-md:    12px;
+  --radius-lg:    16px;
+  --radius-xl:    24px;
+  --radius-full:  9999px;
+
+  /* --- Shadows --- */
+  --shadow-tab: 0 1px 4px rgba(0, 0, 0, 0.10),
+                0 0 0 0.5px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06),
+                 0 0 0 1px rgba(0, 0, 0, 0.04);
+
+  /* --- Transitions --- */
+  --duration-fast:    150ms;
+  --duration-base:    220ms;
+  --duration-slow:    350ms;
+  --ease:             cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out:         cubic-bezier(0, 0, 0.2, 1);
+
+  /* --- Layout --- */
+  --content-width:  600px;
+  --page-padding-x: clamp(1.5rem, 5vw, 2.5rem);
+  --page-padding-y: clamp(3rem, 8vw, 5rem);
+}

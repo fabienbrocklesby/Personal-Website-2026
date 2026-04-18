@@ -1,0 +1,20 @@
+{
+	"name": "fabienbrocklesby-website",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "Official personal website of Fabien Brocklesby, founder of Light Lane.",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/sitemap": "^3.2.0",
+		"astro": "^5.7.0"
+	},
+	"devDependencies": {
+		"@astrojs/check": "^0.9.8",
+		"typescript": "^5.9.3"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "Fabien Brocklesby",
+	"short_name": "Fabien",
+	"description": "Official personal website of Fabien Brocklesby, founder of Light Lane.",
+	"start_url": "/about",
+	"display": "browser",
+	"background_color": "#F8F8F5",
+	"theme_color": "#F8F8F5",
+	"lang": "en",
+	"icons": [
+		{
+			"src": "/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		}
+	]
+}

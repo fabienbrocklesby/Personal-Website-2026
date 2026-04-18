@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import SiteNav from '../components/SiteNav.astro'
+---
+
+<BaseLayout
+	title="Links - Fabien Brocklesby"
+	description="Official links, contact details, and the best places to find the work of Fabien Brocklesby, founder of Light Lane."
+	canonical="https://fabienbrocklesby.com/links"
+	ogType="website"
+>
+	<div class="page">
+		<div class="container page-content">
+			<!-- =========================================================
+           Site Header
+           ========================================================= -->
+			<header
+				class="site-header"
+				itemscope
+				itemtype="https://schema.org/Person"
+				transition:name="site-header"
+			>
+				<meta itemprop="name" content="Fabien Brocklesby" />
+				<meta itemprop="jobTitle" content="Founder" />
+				<meta itemprop="url" content="https://fabienbrocklesby.com" />
+
+				<span class="site-header__eyebrow">Official Site</span>
+
+				<h1 class="site-header__name" itemprop="name">Fabien Brocklesby</h1>
+
+				<p class="site-header__role">
+					Founder of
+					<a
+						href="https://lightlane.app"
+						rel="noopener noreferrer"
+						target="_blank"
+						itemprop="worksFor"
+						itemscope
+						itemtype="https://schema.org/Organization"
+					>
+						<span itemprop="name">Light Lane</span>
+					</a>
+				</p>
+
+				<p class="site-header__tagline">
+					Modern software and turnkey solutions for the laser industry
+				</p>
+
+				<p
+					class="site-header__meta"
+					itemprop="nationality"
+					itemscope
+					itemtype="https://schema.org/Country"
+				>
+					<span itemprop="name">New Zealand</span>
+				</p>
+			</header>
+
+			<!-- Navigation -->
+			<SiteNav activePage="links" />
+
+			<!-- =========================================================
+           Page content
+           ========================================================= -->
+			<main id="main-content" class="page-main" transition:name="page-main">
+				<section class="section links-intro" aria-label="Links introduction">
+					<p class="body-text">
+						Official links, contact details, and the best places to find my work.
+					</p>
+				</section>
+
+				<!-- Primary links -->
+				<section class="section" aria-label="Official links">
+					<h2 class="section-label">Official Links</h2>
+					<nav aria-label="Fabien Brocklesby primary links">
+						<ul class="links-list">
+							<li>
+								<a href="/about" class="link-item">
+									<span class="link-item__label">
+										About Fabien
+										<span class="link-item__desc"
+											>fabienbrocklesby.com/about</span
+										>
+									</span>
+									<span class="link-item__arrow" aria-hidden="true">↗</span>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://lightlane.app"
+									class="link-item"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									<span class="link-item__label">
+										Light Lane
+										<span class="link-item__desc">lightlane.app</span>
+									</span>
+									<span class="link-item__arrow" aria-hidden="true">↗</span>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://lightlane.app/business/book-demo"
+									class="link-item"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									<span class="link-item__label">
+										Book a meeting
+										<span class="link-item__desc"
+											>lightlane.app/business/book-demo</span
+										>
+									</span>
+									<span class="link-item__arrow" aria-hidden="true">↗</span>
+								</a>
+							</li>
+							<li>
+								<a href="mailto:fabien@lightlane.app" class="link-item">
+									<span class="link-item__label">
+										Email Fabien
+										<span class="link-item__desc">fabien@lightlane.app</span>
+									</span>
+									<span class="link-item__arrow" aria-hidden="true">↗</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</section>
+
+				<!-- Profile links -->
+				<section class="section" aria-label="Official profiles">
+					<h2 class="section-label">Profiles</h2>
+					<nav aria-label="Fabien Brocklesby official profiles">
+						<ul class="links-list">
+							<li>
+								<a
+									href="https://www.linkedin.com/in/fabien-brocklesby-3172ab306/"
+									class="link-item"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									<span class="link-item__label">
+										Fabien on LinkedIn
+										<span class="link-item__desc"
+											>linkedin.com/in/fabien-brocklesby</span
+										>
+									</span>
+									<span class="link-item__arrow" aria-hidden="true">↗</span>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://instagram.com/fabienbrocklesby"
+									class="link-item"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									<span class="link-item__label">
+										Fabien on Instagram
+										<span class="link-item__desc">@fabienbrocklesby</span>
+									</span>
+									<span class="link-item__arrow" aria-hidden="true">↗</span>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://instagram.com/lightlane.app"
+									class="link-item"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									<span class="link-item__label">
+										Light Lane on Instagram
+										<span class="link-item__desc">@lightlane.app</span>
+									</span>
+									<span class="link-item__arrow" aria-hidden="true">↗</span>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://www.linkedin.com/company/light-lane/"
+									class="link-item"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									<span class="link-item__label">
+										Light Lane on LinkedIn
+										<span class="link-item__desc"
+											>linkedin.com/company/light-lane</span
+										>
+									</span>
+									<span class="link-item__arrow" aria-hidden="true">↗</span>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://github.com/fabienbrocklesby"
+									class="link-item"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									<span class="link-item__label">
+										GitHub
+										<span class="link-item__desc"
+											>github.com/fabienbrocklesby</span
+										>
+									</span>
+									<span class="link-item__arrow" aria-hidden="true">↗</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</section>
+			</main>
+
+			<!-- Footer -->
+			<footer class="site-footer">
+				<div class="site-footer__inner">
+					<p class="site-footer__copy">&copy; 2026 Fabien Brocklesby</p>
+					<p class="site-footer__note">
+						The official personal website of Fabien Brocklesby
+					</p>
+				</div>
+			</footer>
+		</div>
+	</div>
+</BaseLayout>

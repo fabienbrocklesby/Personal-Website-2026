@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import SiteNav from '../components/SiteNav.astro'
+---
+
+<BaseLayout
+	title="Fabien Brocklesby - Founder of Light Lane"
+	description="Fabien Brocklesby is a New Zealand founder and the founder of Light Lane, a company focused on modern software, turnkey business solutions, and broader progress in the laser industry."
+	canonical="https://fabienbrocklesby.com/about"
+	ogType="profile"
+>
+	<div class="page">
+		<div class="container page-content">
+			<!-- =========================================================
+           Site Header
+           ========================================================= -->
+			<header
+				class="site-header"
+				itemscope
+				itemtype="https://schema.org/Person"
+				transition:name="site-header"
+			>
+				<meta itemprop="name" content="Fabien Brocklesby" />
+				<meta itemprop="jobTitle" content="Founder" />
+				<meta itemprop="url" content="https://fabienbrocklesby.com" />
+
+				<span class="site-header__eyebrow">Official Site</span>
+
+				<h1 class="site-header__name" itemprop="name">Fabien Brocklesby</h1>
+
+				<p class="site-header__role">
+					Founder of
+					<a
+						href="https://lightlane.app"
+						rel="noopener noreferrer"
+						target="_blank"
+						itemprop="worksFor"
+						itemscope
+						itemtype="https://schema.org/Organization"
+					>
+						<span itemprop="name">Light Lane</span>
+					</a>
+				</p>
+
+				<p class="site-header__tagline">
+					Modern software and turnkey solutions for the laser industry
+				</p>
+
+				<p
+					class="site-header__meta"
+					itemprop="nationality"
+					itemscope
+					itemtype="https://schema.org/Country"
+				>
+					<span itemprop="name">New Zealand</span>
+				</p>
+			</header>
+
+			<!-- Navigation -->
+			<SiteNav activePage="about" />
+
+			<!-- =========================================================
+           Page content
+           ========================================================= -->
+			<main id="main-content" class="page-main" transition:name="page-main">
+				<!-- Intro -->
+				<section class="section" aria-label="Introduction">
+					<p class="intro-text">
+						I'm Fabien Brocklesby. I founded Light Lane to change how the laser industry
+						works.
+					</p>
+					<p class="body-text intro-body">
+						Light Lane is focused on modern software, turnkey business solutions, and
+						the broader systems that determine how laser technology is adopted in the
+						real world. I started it because the existing tools and workflows felt
+						outdated, fragmented, and far below what modern businesses and creators
+						should expect.
+					</p>
+				</section>
+
+				<!-- What Light Lane is -->
+				<section class="section" aria-label="About Light Lane">
+					<h2 class="section-label">Light Lane</h2>
+					<p class="body-text">
+						Light Lane is building the software, the business infrastructure, and the
+						longer-term thinking needed to modernise how laser technology reaches the
+						world. This is not a single product - it is a serious, long-term effort to
+						raise the standard of the industry.
+					</p>
+					<ul class="focus-list focus-list--spaced">
+						<li>Modern laser software</li>
+						<li>Turnkey business solutions</li>
+						<li>Practical adoption in real workflows</li>
+						<li>A serious long-term vision for the laser industry</li>
+					</ul>
+				</section>
+
+				<!-- Current Focus -->
+				<section class="section" aria-label="Current focus">
+					<h2 class="section-label">Current Focus</h2>
+					<ul class="focus-list">
+						<li>Building Light Lane</li>
+						<li>Product and workflow design</li>
+						<li>Turnkey laser business solutions</li>
+						<li>Real-world adoption across creators, schools, and businesses</li>
+					</ul>
+				</section>
+
+				<!-- Official bio -->
+				<section class="section" aria-label="Official biography">
+					<h2 class="section-label">Bio</h2>
+					<p class="bio-text">
+						Fabien Brocklesby is a New Zealand founder and the founder of Light Lane. He
+						started the company after observing how outdated and fragmented the laser
+						industry still was - from the software layer through to how businesses
+						actually adopt the technology. His work spans modern laser software, turnkey
+						business infrastructure, and a broader vision for making laser technology
+						more commercially powerful, more accessible, and more standard across
+						real-world use.
+					</p>
+				</section>
+			</main>
+
+			<!-- Footer -->
+			<footer class="site-footer">
+				<div class="site-footer__inner">
+					<p class="site-footer__copy">&copy; 2026 Fabien Brocklesby</p>
+					<p class="site-footer__note">
+						The official personal website of Fabien Brocklesby
+					</p>
+				</div>
+			</footer>
+		</div>
+	</div>
+</BaseLayout>

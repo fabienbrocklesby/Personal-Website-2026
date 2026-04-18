@@ -1,0 +1,206 @@
+---
+// BaseLayout.astro - Root HTML shell with full SEO, structured data, and performance support
+import '../styles/global.css'
+import { ClientRouter } from 'astro:transitions'
+
+interface Props {
+	title?: string
+	description?: string
+	canonical?: string
+	ogType?: string
+	ogTitle?: string
+	ogDescription?: string
+	ogImage?: string
+}
+
+const SITE_URL = 'https://fabienbrocklesby.com'
+const SITE_NAME = 'Fabien Brocklesby'
+
+const {
+	title = 'Fabien Brocklesby - Founder of Light Lane',
+	description = 'Fabien Brocklesby is a New Zealand founder and the founder of Light Lane, a company focused on modern software, turnkey business solutions, and broader progress in the laser industry.',
+	canonical = `${SITE_URL}/about`,
+	ogType = 'profile',
+	ogTitle = title,
+	ogDescription = description,
+	ogImage = undefined
+} = Astro.props
+
+// JSON-LD: Person
+const jsonLdPerson = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	'@id': `${SITE_URL}/#person`,
+	name: 'Fabien Brocklesby',
+	givenName: 'Fabien',
+	familyName: 'Brocklesby',
+	url: `${SITE_URL}/about`,
+	jobTitle: 'Founder',
+	worksFor: {
+		'@type': 'Organization',
+		'@id': 'https://lightlane.app/#organization',
+		name: 'Light Lane',
+		url: 'https://lightlane.app'
+	},
+	nationality: {
+		'@type': 'Country',
+		name: 'New Zealand'
+	},
+	description:
+		'Fabien Brocklesby is a New Zealand founder and the founder of Light Lane, a company focused on modern software, turnkey business solutions, and broader progress in the laser industry.',
+	sameAs: [
+		`${SITE_URL}/about`,
+		'https://www.linkedin.com/in/fabien-brocklesby-3172ab306/',
+		'https://instagram.com/fabienbrocklesby',
+		'https://github.com/fabienbrocklesby',
+		'https://lightlane.app'
+	]
+}
+
+// JSON-LD: Organization
+const jsonLdOrganization = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	'@id': 'https://lightlane.app/#organization',
+	name: 'Light Lane',
+	url: 'https://lightlane.app',
+	founder: {
+		'@type': 'Person',
+		'@id': `${SITE_URL}/#person`,
+		name: 'Fabien Brocklesby'
+	},
+	description:
+		'Light Lane is a company focused on modern software, turnkey business solutions, and broader progress in the laser industry.',
+	sameAs: [
+		'https://lightlane.app',
+		'https://www.linkedin.com/company/light-lane/',
+		'https://instagram.com/lightlane.app'
+	]
+}
+
+// JSON-LD: WebSite
+const jsonLdWebSite = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	'@id': `${SITE_URL}/#website`,
+	name: 'Fabien Brocklesby',
+	url: SITE_URL,
+	description:
+		'Official personal website of Fabien Brocklesby, founder of Light Lane. The authoritative source for his founder profile and official links.',
+	about: { '@id': `${SITE_URL}/#person` },
+	inLanguage: 'en'
+}
+
+// JSON-LD: WebPage (page-specific)
+const jsonLdWebPage = {
+	'@context': 'https://schema.org',
+	'@type': ogType === 'profile' ? 'ProfilePage' : 'WebPage',
+	'@id': `${canonical}#webpage`,
+	url: canonical,
+	name: title,
+	description: description,
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	about: { '@id': `${SITE_URL}/#person` },
+	mainEntity: { '@id': `${SITE_URL}/#person` },
+	inLanguage: 'en'
+}
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="color-scheme" content="light" />
+		<meta name="format-detection" content="telephone=no" />
+
+		<!-- Primary meta -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content="Fabien Brocklesby" />
+
+		<!-- Canonical -->
+		<link rel="canonical" href={canonical} />
+
+		<!-- Robots -->
+		<meta
+			name="robots"
+			content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+		/>
+
+		<!-- Open Graph -->
+		<meta property="og:type" content={ogType} />
+		<meta property="og:site_name" content={SITE_NAME} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:title" content={ogTitle} />
+		<meta property="og:description" content={ogDescription} />
+		<meta property="og:locale" content="en_US" />
+		{ogType === 'profile' && <meta property="profile:first_name" content="Fabien" />}
+		{ogType === 'profile' && <meta property="profile:last_name" content="Brocklesby" />}
+		{ogImage && <meta property="og:image" content={ogImage} />}
+		{ogImage && <meta property="og:image:width" content="1200" />}
+		{ogImage && <meta property="og:image:height" content="630" />}
+		{
+			ogImage && (
+				<meta property="og:image:alt" content={`${SITE_NAME} — Founder of Light Lane`} />
+			)
+		}
+
+		<!-- Twitter / X Card -->
+		<meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+		<meta name="twitter:title" content={ogTitle} />
+		<meta name="twitter:description" content={ogDescription} />
+		{ogImage && <meta name="twitter:image" content={ogImage} />}
+		{
+			ogImage && (
+				<meta name="twitter:image:alt" content={`${SITE_NAME} — Founder of Light Lane`} />
+			)
+		}
+
+		<!-- Identity: rel=me -->
+		<link rel="me" href="https://www.linkedin.com/in/fabien-brocklesby-3172ab306/" />
+		<link rel="me" href="https://instagram.com/fabienbrocklesby" />
+		<link rel="me" href="https://github.com/fabienbrocklesby" />
+
+		<!-- Favicon & manifest -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="manifest" href="/manifest.webmanifest" />
+		<meta name="theme-color" content="#F8F8F5" />
+
+		<!-- JSON-LD Structured Data -->
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLdPerson)} />
+		<script
+			is:inline
+			type="application/ld+json"
+			set:html={JSON.stringify(jsonLdOrganization)}
+		/>
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLdWebSite)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLdWebPage)} />
+
+		<!-- View transitions -->
+		<ClientRouter />
+
+		<!-- Navigation direction detection for directional slide transitions -->
+		<script>
+			const PAGE_ORDER = ['/about', '/links']
+			const norm = (p: string) => p.replace(/\/$/, '') || '/'
+
+			document.addEventListener('astro:before-preparation', (ev) => {
+				const e = ev as unknown as { from?: URL; to?: URL }
+				const fi = PAGE_ORDER.indexOf(norm(e.from?.pathname ?? ''))
+				const ti = PAGE_ORDER.indexOf(norm(e.to?.pathname ?? ''))
+				if (fi !== -1 && ti !== -1 && fi !== ti) {
+					document.documentElement.dataset.navDirection = ti > fi ? 'forward' : 'backward'
+				}
+			})
+
+			document.addEventListener('astro:page-load', () => {
+				delete document.documentElement.dataset.navDirection
+			})
+		</script>
+	</head>
+	<body>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
+		<slot />
+	</body>
+</html>

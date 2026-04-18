@@ -1,0 +1,8 @@
+# Cloudflare Pages redirect rules
+# Processed at the CDN edge before any static file is served
+
+# www → apex (canonical domain)
+https://www.fabienbrocklesby.com/* https://fabienbrocklesby.com/:splat 301
+
+# Root → /about (canonical identity page)
+/ /about 301
