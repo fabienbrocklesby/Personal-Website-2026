@@ -19,6 +19,7 @@ import SiteNav from '../components/SiteNav.astro'
 				itemscope
 				itemtype="https://schema.org/Person"
 				transition:name="site-header"
+				transition:persist
 			>
 				<meta itemprop="name" content="Fabien Brocklesby" />
 				<meta itemprop="jobTitle" content="Founder" />
@@ -215,7 +216,7 @@ import SiteNav from '../components/SiteNav.astro'
 			</main>
 
 			<!-- Footer -->
-			<footer class="site-footer">
+			<footer class="site-footer" transition:name="site-footer" transition:persist>
 				<div class="site-footer__inner">
 					<p class="site-footer__copy">&copy; 2026 Fabien Brocklesby</p>
 					<p class="site-footer__note">

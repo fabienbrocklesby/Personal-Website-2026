@@ -110,9 +110,12 @@ const jsonLdWebPage = {
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content"
+		/>
 		<meta name="color-scheme" content="light" />
-		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
 
 		<!-- Primary meta -->
 		<title>{title}</title>
@@ -187,6 +190,7 @@ const jsonLdWebPage = {
 
 			document.addEventListener('astro:before-preparation', (ev) => {
 				const e = ev as unknown as { from?: URL; to?: URL }
+				document.documentElement.dataset.isRouting = 'true'
 				const fi = PAGE_ORDER.indexOf(norm(e.from?.pathname ?? ''))
 				const ti = PAGE_ORDER.indexOf(norm(e.to?.pathname ?? ''))
 				if (fi !== -1 && ti !== -1 && fi !== ti) {
@@ -195,6 +199,7 @@ const jsonLdWebPage = {
 			})
 
 			document.addEventListener('astro:page-load', () => {
+				delete document.documentElement.dataset.isRouting
 				delete document.documentElement.dataset.navDirection
 			})
 		</script>

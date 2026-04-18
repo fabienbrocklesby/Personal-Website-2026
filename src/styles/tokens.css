@@ -8,6 +8,7 @@
   --color-bg:              #F8F8F5;
   --color-surface:         #FFFFFF;
   --color-surface-raised:  rgba(255, 255, 255, 0.85);
+  --color-surface-soft:    rgba(255, 255, 255, 0.56);
 
   /* --- Color: Text --- */
   --color-text:            #111110;
@@ -17,11 +18,17 @@
   /* --- Color: Border --- */
   --color-border:          #E4E4DF;
   --color-border-subtle:   #EFEFEA;
+  --color-border-strong:   #D9D9D3;
 
   /* --- Color: Interactive --- */
   --color-tab-bg:          rgba(0, 0, 0, 0.06);
   --color-tab-active:      #FFFFFF;
   --color-link-hover:      rgba(17, 17, 16, 0.55);
+  --color-hover:           rgba(17, 17, 16, 0.045);
+  --color-press:           rgba(17, 17, 16, 0.075);
+  --color-focus-ring:      rgba(17, 17, 16, 0.18);
+  --color-selection:       rgba(17, 17, 16, 0.12);
+  --color-tap-highlight:   rgba(17, 17, 16, 0.08);
 
   /* --- Color: Accent --- */
   --color-accent:          #111110;
@@ -85,13 +92,18 @@
                 0 0 0 0.5px rgba(0, 0, 0, 0.06);
   --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06),
                  0 0 0 1px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 12px 30px rgba(17, 17, 16, 0.08),
+                       0 0 0 1px rgba(17, 17, 16, 0.05);
 
   /* --- Transitions --- */
+  --duration-micro:   120ms;
   --duration-fast:    150ms;
   --duration-base:    220ms;
-  --duration-slow:    350ms;
+  --duration-slow:    360ms;
+  --duration-page:    420ms;
   --ease:             cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out:         cubic-bezier(0, 0, 0.2, 1);
+  --ease-emphasis:    cubic-bezier(0.22, 1, 0.36, 1);
 
   /* --- Layout --- */
   --content-width:  600px;

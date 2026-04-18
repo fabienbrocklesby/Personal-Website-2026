@@ -8,11 +8,12 @@ interface Props {
 const { activePage } = Astro.props
 ---
 
-<nav class="site-nav" aria-label="Site navigation">
+<nav class="site-nav" aria-label="Site navigation" transition:name="site-nav">
 	<div class="tabs-list">
 		<a
 			href="/about"
 			class="tab-link"
+			transition:name="tab-about"
 			aria-current={activePage === 'about' ? 'page' : undefined}
 		>
 			About
@@ -20,6 +21,7 @@ const { activePage } = Astro.props
 		<a
 			href="/links"
 			class="tab-link"
+			transition:name="tab-links"
 			aria-current={activePage === 'links' ? 'page' : undefined}
 		>
 			Links
